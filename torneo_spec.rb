@@ -8,7 +8,15 @@ RSpec.describe Torneo do
             @torneo = Torneo.new 
         end
         it '1.1 nuevo' do
-            expect(@torneo).to be_a_instance_of(Torneo)
+            expect(@torneo).to be_an_instance_of(Torneo)
+        end
+    end
+
+    context '2 cargar equipo' do
+        it 'carga' do
+            torneo = Torneo.new
+            torneo.cargarEquipo '0001', 'Power Rangers'
+            expect(torneo.equipos[0].nombre).to eql('Power Rangers')
         end
     end
 end
