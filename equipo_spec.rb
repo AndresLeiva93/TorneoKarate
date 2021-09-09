@@ -14,12 +14,21 @@ RSpec.describe Equipo do
         end
     end
 
-    context '2 cargar participante'
+    context '2 cargar participante' do
         it 'carga' do
             @equipo = Equipo.new '0001', 'Power Rangers'
-            participante = Participante.new '0001', 'Elfi Deo', 18, '1898322-1', 'Blanco'
-            @equipo.cargarParticipante '0001', 'Elfi Deo', 18, '1898322-1', 'Blanco'
+            participante = Participante.new '0001', 'Elfi Deo', 18, '1898322-1', 'Blanco',1,1,1
+            @equipo.cargarParticipante '0001', 'Elfi Deo', 18, '1898322-1', 'Blanco',1,1,1
             expect(@equipo.participantes[0].nombre).to eql('Elfi Deo')
+        end
     end
 
+    context '3 puntaje del equipo' do
+        it 'carga' do
+            @equipo = Equipo.new '0001', 'Power Rangers'
+            @equipo.cargarParticipante '0001', 'Elfi Deo', 18, '1898322-1', 'Blanco',1,1,1
+            @equipo.cargarParticipante '0002', 'Elsa Pallo', 22, '34564623-1', 'Rojo',1,2,1
+            expect(@equipo.puntajeEquipo).to eql(17)
+        end
+    end
 end

@@ -10,9 +10,17 @@ class Equipo
         @participantes = Array.new
     end
 
-    def cargarParticipante codigo, nombre, edad, dni, cinturon
-        participante = Participante.new codigo, nombre, edad, dni, cinturon
+    def cargarParticipante codigo, nombre, edad, dni, cinturon, partidasGanadas, partidasEmpatadas, partidasPerdidas
+        participante = Participante.new codigo, nombre, edad, dni, cinturon, partidasGanadas, partidasEmpatadas, partidasPerdidas
         @participantes.push(participante)
         @participantes
+    end
+
+    def puntajeEquipo
+        sum = 0
+        for participante in @participantes
+            sum += participante.puntaje
+        end
+        sum
     end
 end
