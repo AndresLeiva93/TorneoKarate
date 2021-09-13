@@ -19,4 +19,13 @@ RSpec.describe Torneo do
             expect(torneo.equipos[0].nombre).to eql('Power Rangers')
         end
     end
+
+    context '3 encontrar al equipo ganador' do
+        it 'carga' do
+            torneo = Torneo.new
+            torneo.cargarEquipo '0001', 'Power Rangers'
+            expect(torneo.equipos[0].nombre).to eql('Power Rangers')
+        end
+    end
+
 end

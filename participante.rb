@@ -10,7 +10,7 @@ class Participante
         @cinturon = cinturon
         @partidasGanadas = partidasGanadas
         @partidasEmpatadas = partidasEmpatadas
-        @partidasPerdidas = 0
+        @partidasPerdidas = partidasPerdidas
         @puntaje = (partidasGanadas * 4) + (partidasEmpatadas * 3)
     end
 end
