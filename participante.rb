@@ -13,4 +13,9 @@ class Participante
         @partidasPerdidas = partidasPerdidas
         @puntaje = (partidasGanadas * 4) + (partidasEmpatadas * 3)
     end
+
+    def nuevo_puntaje
+        @puntaje = (partidasGanadas * 4) + (partidasEmpatadas * 3)
+    end
+
 end
